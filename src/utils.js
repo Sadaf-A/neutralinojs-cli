@@ -22,6 +22,10 @@ let showArt = () => {
     console.log(getFiglet());
 }
 
+let clearBuild = () => {
+    fse.removeSync('/dist');
+}
+
 let checkCurrentProject = () => {
     if(!isNeutralinojsProject()) {
         error(`Unable to find ${CONFIG_FILE}. ` +
@@ -60,5 +64,6 @@ module.exports = {
     warn,
     trimPath,
     clearCache,
-    getVersionTag
+    getVersionTag,
+    clearBuild
 }
